@@ -1,0 +1,129 @@
+body {
+  background-image: url(/photo_ink/vitrine.webp);
+  background-size: cover; /* L'image couvre tout l'écran */
+  background-repeat: no-repeat; /* Pas de répétition */
+  background-position: center; /* Centre l'image */
+  min-height: 95vh; /* S'assure que le fond prend toute la hauteur de la fenêtre */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0;
+  bottom: 0;
+  overflow-x: auto;
+}
+
+.logo {
+  position: fixed;
+  top: 10px; /* Ajuste la position verticale du logo */
+  left: 10px; /* Ajuste la position horizontale du logo */
+  z-index: 1000; /* Assure que le logo est au-dessus du contenu */
+  border-radius: 20px;
+}
+
+nav.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Assure que la barre de navigation est au-dessus du contenu */
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 40px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.rencontre {
+  color: white;
+  margin-left: 5%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  font-size: 30px;
+  min-height: 80vh;
+  max-width: 30vw;
+}
+footer {
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+}
+
+/* équipe */
+
+.team {
+  margin-top: 30%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.member1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.member2 {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.member3 {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.member4 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* conseils */
+.conseil {
+  color: rgb(249, 249, 249);
+  font-size: 1.5em;
+  margin-top: 20%;
+  background-color: rgba(0, 0, 0, 0.521);
+}
+
+/* contact */
+.horaires {
+  margin-top: 15%;
+  color: white;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.521);
+}
+address {
+  color: white;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.521);
+  text-align: right;
+}
+.formulaire {
+  margin-top: 5%;
+  color: white;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.521);
+  flex-direction: column;
+}
