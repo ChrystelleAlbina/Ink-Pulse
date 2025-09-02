@@ -3,16 +3,18 @@ body {
   background-size: cover; /* L'image couvre tout l'écran */
   background-repeat: no-repeat; /* Pas de répétition */
   background-position: center; /* Centre l'image */
-  min-height: 95vh; /* S'assure que le fond prend toute la hauteur de la fenêtre */
+  background-attachment: fixed;
+  min-height: 100vh; /* S'assure que le fond prend toute la hauteur de la fenêtre */
   margin: 0; /* Supprime les marges par défaut */
   padding: 0;
   bottom: 0;
-  overflow-x: auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .logo {
   position: fixed;
-  top: 10px; /* Ajuste la position verticale du logo */
+  top: 5%; /* Ajuste la position verticale du logo */
   left: 10px; /* Ajuste la position horizontale du logo */
   z-index: 1000; /* Assure que le logo est au-dessus du contenu */
   border-radius: 20px;
@@ -28,7 +30,7 @@ nav.banner {
 
 ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /*ajoute de l'espace entreles elements*/
   color: white;
   padding: 10px 15px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -66,20 +68,29 @@ footer {
 
 /* équipe */
 
+h2,
+h3 {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 1%;
+  background-color: rgba(0, 0, 0, 0.521);
+}
+
 .team {
-  margin-top: 30%;
+  margin-top: 15%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 8px;
+  gap: 8%;
 }
 
 .member1 {
-  grid-column-start: 1;
+  grid-column-start: 2;
   grid-row-start: 1;
 }
 .member2 {
-  grid-column-start: 2;
+  grid-column-start: 4;
   grid-row-start: 1;
 }
 
@@ -89,27 +100,88 @@ footer {
 }
 
 .member4 {
-  grid-column-start: 1;
+  grid-column-start: 4;
   grid-row-start: 2;
 }
 
+p {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.758);
+}
 img {
   width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 50%;
+}
+
+/* Galerie */
+
+.galerie {
+  margin-top: 15%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8%;
+}
+
+.Bo {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+.Charles {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.Victoria {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+
+.Bo img {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.Charles img {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.Victoria img {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* Hygiène */
+
+.titre_neon {
+  text-align: center;
+  font-size: 2.5em;
+  color: #39ff14; /* Vert néon */
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14,
+    0 0 40px #39ff14;
+  margin-top: 10%;
+}
+.hygiene {
+  margin-top: 5%;
+  color: rgb(249, 249, 249);
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.521);
 }
 
 /* conseils */
 .conseil {
   color: rgb(249, 249, 249);
-  font-size: 1.5em;
-  margin-top: 20%;
-  background-color: rgba(0, 0, 0, 0.521);
+  font-size: 1.2em;
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.329);
 }
 
 /* contact */
 .horaires {
-  margin-top: 15%;
+  margin-top: 10%;
+  margin-left: 15%;
   color: white;
   font-size: 1.5em;
   background-color: rgba(0, 0, 0, 0.521);
@@ -117,13 +189,264 @@ img {
 address {
   color: white;
   font-size: 1.5em;
+  margin-right: 15%;
   background-color: rgba(0, 0, 0, 0.521);
   text-align: right;
 }
-.formulaire {
-  margin-top: 5%;
+.form {
+  margin: 2% auto; /* Centre le formulaire horizontalement */
+  max-width: 600px; /* Limite la largeur du formulaire */
   color: white;
-  font-size: 1.5em;
-  background-color: rgba(0, 0, 0, 0.521);
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.498);
+  display: flex;
   flex-direction: column;
+  gap: 20px; /* Espace entre les éléments du formulaire */
+}
+
+/* Styles pour les inputs du formulaire */
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+/* Style pour le bouton du formulaire */
+.form button {
+  padding: 12px 25px;
+  background-color: #14bcff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #2fcc11;
+  box-shadow: 0 0 10px #39ff14;
+}
+/* Style pour les labels */
+.form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style pour focus des inputs */
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #39ff14;
+  box-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+}
+
+/* Media Queries pour Tablettes (768px à 1024px) */
+@media screen and (max-width: 1024px) {
+  ul {
+    font-size: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 80px;
+    top: 2%;
+  }
+
+  .team,
+  .galerie {
+    margin-top: 20%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4%;
+  }
+
+  .member1,
+  .member2,
+  .member3,
+  .member4,
+  .Bo,
+  .Charles,
+  .Victoria {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .titre_neon {
+    font-size: 2em;
+    margin-top: 15%;
+  }
+
+  .form {
+    max-width: 80%;
+  }
+}
+
+/* Media Queries pour Téléphones en mode paysage (480px à 767px) */
+@media screen and (max-width: 767px) {
+  nav.banner {
+    position: relative;
+  }
+
+  ul {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .logo {
+    width: 60px;
+    position: absolute;
+  }
+
+  .team,
+  .galerie {
+    margin-top: 25%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .rencontre {
+    max-width: 90vw;
+    font-size: 20px;
+    margin: 15% 5%;
+  }
+
+  .titre_neon {
+    font-size: 1.5em;
+    margin-top: 20%;
+  }
+
+  .hygiene p,
+  .conseil p {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .horaires,
+  address {
+    margin: 5%;
+    font-size: 1.2em;
+  }
+
+  .form {
+    max-width: 95%;
+    margin-top: 15%;
+    padding: 15px;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.5em;
+  }
+
+  footer {
+    position: relative;
+    font-size: 0.8em;
+  }
+}
+
+/* Media Queries pour Téléphones en mode portrait (jusqu'à 479px) */
+@media screen and (max-width: 479px) {
+  nav.banner {
+    position: relative;
+    width: 100%;
+  }
+
+  ul {
+    flex-direction: column;
+    font-size: 16px;
+    padding: 2px;
+    text-align: center;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+
+  .logo {
+    width: 50px;
+    top: 1%;
+    left: 5px;
+  }
+
+  .team,
+  .galerie {
+    margin-top: 30%;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 5px;
+  }
+
+  .rencontre {
+    max-width: 95vw;
+    font-size: 18px;
+    margin: 20% 2.5%;
+    min-height: 60vh;
+  }
+
+  .titre_neon {
+    font-size: 1.2em;
+    margin-top: 25%;
+    padding: 10px;
+  }
+
+  .hygiene p,
+  .conseil p {
+    font-size: 0.9em;
+    padding: 8px;
+    margin: 5px;
+  }
+
+  .horaires,
+  address {
+    margin: 3%;
+    font-size: 1em;
+  }
+
+  .form {
+    max-width: 90%;
+    margin-top: 20%;
+    padding: 10px;
+  }
+
+  .form input,
+  .form textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .form button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2em;
+    margin-top: 5%;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  footer {
+    position: relative;
+    font-size: 0.7em;
+    padding: 5px;
+  }
 }
